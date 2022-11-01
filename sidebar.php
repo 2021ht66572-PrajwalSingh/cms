@@ -68,6 +68,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-edit_branch">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Restricted Items
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./index.php?page=new_restrict_items" class="nav-link nav-new_branch tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Add New</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index.php?page=restrict_item_list" class="nav-link nav-branch_list tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         <?php endif; ?>
           <li class="nav-item">
             <a href="#" class="nav-link nav-edit_parcel">

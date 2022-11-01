@@ -56,6 +56,16 @@ if($action == 'delete_branch'){
 	if($save)
 		echo $save;
 }
+if($action == 'save_restrict_item'){
+	$save = $crud->save_restrict_item();
+	if($save)
+		echo $save;
+}
+if($action == 'delete_restrict_item'){
+	$save = $crud->delete_restrict_item();
+	if($save)
+		echo $save;
+}
 if($action == 'save_parcel'){
 	$save = $crud->save_parcel();
 	if($save)

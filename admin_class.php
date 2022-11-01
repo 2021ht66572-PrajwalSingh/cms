@@ -263,6 +263,44 @@ Class Action {
 			return 1;
 		}
 	}
+	function save_restrict_item(){
+		extract($_POST);
+		$data = "";
+		foreach($_POST as $k => $v){
+			if(!in_array($k, array('id')) && !is_numeric($k)){
+				if(empty($data)){
+					$data .= " $k='$v' ";
+				}else{
+					$data .= ", $k='$v' ";
+				}
+			}
+		}
+		if(empty($id)){
+			$chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			$i = 0;
+			while($i == 0){
+				$bcode = substr(str_shuffle($chars), 0, 10);
+				$chk = $this->db->query("SELECT * FROM restricted_items where item_code = '$bcode'")->num_rows;
+				if($chk <= 0){
+					$i = 1;
+				}
+			}
+			$data .= ", item_code='$bcode' ";
+			$save = $this->db->query("INSERT INTO restricted_items set $data");
+		}else{
+			$save = $this->db->query("UPDATE restricted_items set $data where id = $id");
+		}
+		if($save){
+			return 1;
+		}
+	}
+	function delete_restrict_item(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM restricted_items where id = $id");
+		if($delete){
+			return 1;
+		}
+	}
 	function save_parcel(){
 		extract($_POST);
 		foreach($price as $k => $v){
