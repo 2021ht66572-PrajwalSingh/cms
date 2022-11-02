@@ -118,7 +118,15 @@
                 Reports
               </p>
             </a>
-          </li>  
+          </li>
+            <li class="nav-item dropdown">
+                <a href="./index.php?page=feedback" class="nav-link nav-feedback">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>
+                        Feedback
+                    </p>
+                </a>
+            </li>
         </ul>
       </nav>
     </div>
